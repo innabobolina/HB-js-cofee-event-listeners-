@@ -59,6 +59,13 @@
     //const revenueMessage;
 
     coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+   
+    const makeCoffee = () => {
+      coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+    }
+
+    coffeeImage.addEventListener('click', makeCoffee);
+
     // use this JavaScript object in further study step
 
     const prices = {
