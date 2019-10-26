@@ -53,37 +53,39 @@
 
   <script>
 
-    // Set these variables to their DOM elements
+    // Step 1: Set these variables to their DOM elements
+    const coffeeImage = document.querySelector('#coffee-image');
+    const revenueMessage = document.querySelector('#revenue');
 
-    const coffeeImage = document.querySelector('img');
-    //const revenueMessage;
-
+    // Step 1: Initialize the image to "coffee_beans.jpg"
     coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
-   
-    const makeCoffee = () => {
-      coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
-    }
 
-    const makeCoffee = () => {
-      coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
-    }
 
+    // Step 2: Create a function called make_coffee that changes the image to
+    // coffee_mug.jpg and add an event listener to the image that on a click
+    // will call make_coffee
     coffeeImage.addEventListener('click', makeCoffee);
 
-    setTimeout()
+    //
+    // function makeCoffee() {
+    //   coffeeImage.setAttribute('src', "coffee_mug.jpg");
+    // }
 
+    // Step 3: Change the makeCoffee function to first display
+    // coffee_machine.jpg for 1500 ms, to then display coffee_mug.jpg for
+    // 2500 ms, and then to display coffee_beans.jpg
 
+    function makeCoffee() {
+      coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
 
-    // use this JavaScript object in further study step
+      setTimeout(function () {
+        coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+      }, 1500);
 
-    const prices = {
-      'brew': 2.05,
-      'espresso': 3.25,
-      'latte': 4.15,
-      'hot chocolate': 2.50
-    };
-
-
+      setTimeout(function () {
+        coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+      }, 4000);
+    }
   </script>
 
 </body>
